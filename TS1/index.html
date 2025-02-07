@@ -4,55 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Resume</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 20px;
-            background-color: #f4f4f4;
-            transition: background-color 0.5s;
-        }
-        .resume {
-            max-width: 600px;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-        button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            border: none;
-            background-color: #007BFF;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js"></script>
 </head>
 <body>
-    <div class="resume" id="resume">
-        <h1>John Doe</h1>
-        <p><strong>Email:</strong> johndoe@example.com</p>
-        <p><strong>Phone:</strong> +123 456 7890</p>
-        <h2>Education</h2>
-        <p>Bachelor of Science in Computer Science</p>
-        <h2>Experience</h2>
-        <p>Software Engineer at XYZ Company</p>
-        <button onclick="changeColor()">Change Color</button>
+    <div class="button-container">
+        <button onclick="toggleDarkMode()">Dark Mode</button>
     </div>
+    <div class="resume" id="resume">
+        <img src="images/pictore.jpg" alt="Profile Picture" class="profile">
+        <div class="personal-info">
+            <h1>Raphael Dimpas</h1>
+            <p><strong>Address:</strong> Antipolo, Rizal </p>
+            <p><strong>Contact No.:</strong> +63 936 902 3005</p>
+            <p><strong>Email:</strong> raphaeldkm@gmail.com </p>
+        </div>
+    </div>
+    <div class="content">
+        <div class="section">
+            <h2>Educational Background</h2>
+            <p><strong>1st Degree:</strong> Bachelor of Science in Computer Science</p>
+            <p><strong>University:</strong> FEU Institute of Technology</p>
+            <p><strong>Graduation Year:</strong> 2027</p>
+            <p><strong>2nd Degree:</strong> Bachelor of Science in Cannabis Entrepreneurship</p>
+            <p><strong>University:</strong> Johnson & Wales University</p>
+            <p><strong>Graduation Year:</strong> 2031</p> 
+            <p><strong>3rd Degree:</strong> Bachelor of Science in Bowling Industry Management and Technology</p>
+            <p><strong>University:</strong> Vincennes University</p>
+            <p><strong>Graduation Year:</strong> 2035</p> 
+        </div>
 
-    <script>
-        function changeColor() {
-            const colors = ['#FF5733', '#33FF57', '#3357FF', '#FF33A8', '#A833FF'];
-            const randomColor = colors[Math.floor(Math.random() * colors.length)];
-            document.body.style.backgroundColor = randomColor;
-        }
-    </script>
+        <div class="section">
+            <h2>Experience</h2>
+            <p><strong>Job Title:</strong> Data Engineer</p>
+            <p><strong>Company:</strong> Meta Platforms Inc</p>
+            <p><strong>Duration:</strong> January 2027 - Present</p>
+            <p><strong>Responsibilities:</strong></p>
+            <ul>
+                <li>Maintain and develop the Meta Database</li>
+                <li>Collaborate with cross-functional teams</li>
+                <li>Implement new features based on client requirements</li>
+            </ul>
+            <p><strong>Accomplishments</strong></p>
+            <ul>
+                <li>Increased the efficiency of the Meta Database by 30%</li>
+                <li>Reduced the number of bugs in the Meta Database by 20%</li>
+                <li>Improved the performance of the Meta Database by 25%</li>
+                <li>Sold $50,000,000,000 worth of Meta product user's personal information to China</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Skills</h2>
+            <ul>
+                <li><strong> Programming Languages:</strong>  JavaScript, Python, Java, C++</li>
+                <li><strong> Web Technologies:</strong>  HTML, CSS, Node.js</li>
+                <li><strong> Databases:</strong>  MySQL</li>
+                <li><strong> Tools:</strong>  Git</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Projects</h2>
+            <p><strong>Project Name:</strong> RideSmart</p>
+            <p><strong>Description:</strong> Developed a mobile application for Filipino commuters living in areas not within Metro Manila</p>
+            <p><strong>Technologies Used:</strong>  Java, Kotlin</p>
+        </div>
+
+        <div class="section">
+            <h2>Certifications</h2>
+            <p><strong>Certification Name:</strong>  Cisco Certified Network Associate (CCNA)</p>
+            <p><strong>Issuing Organization:</strong> Cisco</p>
+            <p><strong>Date:</strong> December 2024</p>
+        </div>
+
+        <div class="section">
+            <h2>Languages</h2>
+            <ul>
+                <li>English (Fluent)</li>
+                <li>Mandarin (Intermediate)</li>
+                <li>Filipino (Native Language)</li>
+            </ul>
+        </div>
+    </div>
 </body>
 </html>
