@@ -18,7 +18,7 @@ function showBox(day) {
         const oldBox = document.getElementById(activeBoxes[0]);
         oldBox.style.animation = 'ascendBox 1s forwards';
 
-        oldBox.style.backgroundColor = "transparent"; // Starts hollow
+        oldBox.style.backgroundColor = "transparent"; 
         oldBox.style.borderColor = getColor(activeBoxes[0]);
 
         setTimeout(() => {
