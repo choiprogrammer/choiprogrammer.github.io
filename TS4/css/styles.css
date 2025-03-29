@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Lora:wght@400;700&family=Nunito:wght@300;700&family=Playfair+Display:wght@400;700&display=swap');
+
+body {
+    font-family: 'Lora', serif;
+    background-color: #f8f1e5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    overflow: auto; /* Ensure no unwanted scroll lock */
+}
+
+/* Logo Styling */
+.logo {
+    max-width: 150px;
+    height: auto;
+    display: block;
+    margin: 0;
+}
+
+/* Header Styling */
+.header-container {
+    text-align: left;
+    margin-bottom: 30px;
+    padding-left: 30px; 
+}
+
+.header-container h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #a52a2a;
+}
+
+.text {
+    font-size: 1.2rem;
+    font-style: italic;
+    font-family: 'Italiana', serif;
+}
+
+/* Restaurant Cards */
+.restaurant-card {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height: auto; /* Remove fixed height */
+    display: flex;
+    flex-direction: column;
+}
+
+.restaurant-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Restaurant Images */
+.restaurant-img {
+    width: 100%;
+    height: 350px; 
+    object-fit: cover;
+}
+
+/* Overlay Text */
+.restaurant-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.restaurant-card:hover .restaurant-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Overlay Text Styling */
+.restaurant-overlay h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+}
+
+.restaurant-overlay p {
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+/* Fix Description Card Image Sizes */
+#restaurantDetailContent img {
+    width: 100%;
+    max-width: 400px;
+    height: 300px; /* Fixed height */
+    object-fit: cover; /* Ensures images keep their proportions */
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+/* Detail Screen Pop-Up */
+#detailScreen {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 800px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: none; /* Initially hidden */
+    
+    opacity: 0; /* Start fully transparent */
+    transition: opacity 0.3s ease-in-out; /* Smooth fade-in effect */
+}
+
+#detailScreen.show {
+    display: block;
+    opacity: 1; /* Fully visible when the class is added */
+}
+
+
+/* Background Overlay */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+}
+
+/* Main Menu Button (Fixed to Right Side) */
+#mainMenuButton {
+    position: fixed;
+    top: 180px;
+    right: 50px;
+    background-color: #a52a2a;
+    padding: 10px 15px;
+    z-index: 1100;
+}
+
+#mainMenuButton:hover {
+    background-color: #8b0000;
+}
+
+/* Hide Elements When Not Needed */
+.d-none {
+    display: none !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .restaurant-card {
+        width: 100%;
+        height: auto; /* Allow height to adjust */
+    }
+
+    .header-container h2 {
+        font-size: 2rem;
+    }
+
+    .restaurant-overlay h3 {
+        font-size: 1.3rem;
+    }
+
+    #detailScreen {
+        width: 95%;
+        padding: 20px;
+        max-height: 85vh; /* Prevents cutoff on smaller screens */
+    }
+}
